@@ -49,9 +49,7 @@ public class Player : MonoBehaviour {
     private void CheckFly()
         //change the y-speed and change the animation
     {
-        if ((GetScreenTouch() == screenTouch.left || GetScreenTouch() == screenTouch.both) || 
-        (Input.GetKey(KeyCode.Mouse0)&& Application.platform == RuntimePlatform.WindowsPlayer)||
-        (Input.GetKey(KeyCode.Mouse0)&& Application.platform == RuntimePlatform.WindowsEditor)) 
+        if (GetScreenTouch() == screenTouch.left || GetScreenTouch() == screenTouch.both || (Input.GetKey(KeyCode.Mouse0))) 
         //if(Input.GetKey(KeyCode.Mouse0))
         {
             isFly = true;
