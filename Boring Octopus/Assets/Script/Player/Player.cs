@@ -25,10 +25,13 @@ public class Player : MonoBehaviour {
     public AudioClip getHurtSE;
     public AudioClip shootSE;
 
+    private float bulletTimer = 0;
+    private float getBulletInterval = 3;
     private void Update()
     {
         CheckFly();
         CheckSkill();
+        GetBulletOverTime();
         if (canHorizontalMove)
         {
             HorizontalMove(5);
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour {
 
         
     }
+
 
 
     //====================================================================================
@@ -145,6 +149,15 @@ public class Player : MonoBehaviour {
     //====================================================================================
     //  Battle
     //====================================================================================
+    private void GetBulletOverTime()
+    {
+        bulletTimer += Time.deltaTime;
+        if(bulletTimer > getBulletInterval)
+        {
+            bulletTimer = 0;
+            stateManager.ChangeBullet(1);
+        }
+    }
 
     private void CheckSkill()
     //after get touch, check if player can use skill, use if he/she can
