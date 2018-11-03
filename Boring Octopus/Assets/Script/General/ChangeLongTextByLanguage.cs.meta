@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: b137b41844f42234cb9d850cd5fdc30f
-timeCreated: 1505609654
-licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  - chFont: {fileID: 12800000, guid: 9dc7a67faec11a5429f052ffa3c42d09, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

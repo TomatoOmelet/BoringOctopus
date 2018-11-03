@@ -152,10 +152,12 @@ public class TitleManager : MonoBehaviour {
         if (language == language.English)
         {
             highestScoreUI.GetComponent<Text>().text = "Highest Score: \n" + highestScore.ToString();
+            highestScoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().enFont;
         }
         else
         {
             highestScoreUI.GetComponent<Text>().text = "最高得分: \n" + highestScore.ToString();
+            highestScoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().chFont;
         }
     }
 

@@ -72,10 +72,12 @@ public class UIManager : MonoBehaviour {
        if(TitleManager.language == language.English)
         {
             scoreUI.GetComponent<Text>().text = "Score: " + number.ToString();
+            scoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().enFont;
         }
         else
         {
             scoreUI.GetComponent<Text>().text = "分数: " + number.ToString();
+            scoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().chFont;
         }
 
     }
@@ -97,10 +99,12 @@ public class UIManager : MonoBehaviour {
         if(TitleManager.language == language.English)
         {
             deathScoreUI.GetComponent<Text>().text = "Your Score is: " + StateManager.finalScore.ToString();
+            deathScoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().enFont;
         }
         else
         {
             deathScoreUI.GetComponent<Text>().text = "你最后的分数是："+ StateManager.finalScore.ToString();
+            deathScoreUI.GetComponent<Text>().font = GameObject.Find("FontManager").GetComponent<FontManager>().chFont;
         }
     }
 
