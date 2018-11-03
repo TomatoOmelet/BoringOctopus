@@ -986,6 +986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chineseText: "\u7EE7\u7EED"
   englishText: Continue
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &548438833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &718841976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1821,7 +1823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8062188, y: 0.91400003}
   m_AnchorMax: {x: 0.8492188, y: 0.97}
-  m_AnchoredPosition: {x: 0.000045776367, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950814295
@@ -1965,7 +1967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83800006, y: 0.91400003}
   m_AnchorMax: {x: 0.8806563, y: 0.97}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084378368
@@ -2034,7 +2036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.901, y: 0.91400003}
   m_AnchorMax: {x: 0.9438751, y: 0.97}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0.2000122}
+  m_AnchoredPosition: {x: 0, y: 0.2000122}
   m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115489007
@@ -2381,8 +2383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef53a7a4500fa4c438dff2771e1e73ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chineseText: "\u8D77\u98DE"
-  englishText: Fly
+  chineseText: "\u5DE6\u952E\u8D77\u98DE"
+  englishText: (Left Mouse)Fly
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &1472826013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chineseText: "\u6682\u505C"
   englishText: Pause
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &1729898737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +2944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9328751, y: 0.91400003}
   m_AnchorMax: {x: 0.9744376, y: 0.97}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0.2000122}
+  m_AnchoredPosition: {x: 0, y: 0.2000122}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747299842
@@ -3347,6 +3353,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chineseText: "\u518D\u6765\u4E00\u6B21"
   englishText: Replay
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &1950934296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,6 +3444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chineseText: "\u4F60\u6B7B\u4E86"
   englishText: Game Over
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &1960259768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,6 +3604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chineseText: "\u9000\u51FA"
   englishText: Exit
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!1 &2002178801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,8 +3858,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef53a7a4500fa4c438dff2771e1e73ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chineseText: "\u5C04\u51FB"
-  englishText: Shoot
+  chineseText: "\u53F3\u952E\u5C04\u51FB"
+  englishText: (Right Mouse)Shoot
+  enFont: {fileID: 0}
+  chFont: {fileID: 0}
 --- !u!114 &2046076917
 MonoBehaviour:
   m_ObjectHideFlags: 0
