@@ -26,6 +26,7 @@ public class TitleManager : MonoBehaviour {
 
     private void Awake()
     {
+        Time.timeScale = 1;
         gameObject.GetComponent<SaveManager>().Load();
     }
 
@@ -56,7 +57,6 @@ public class TitleManager : MonoBehaviour {
         //transfer to next Scene!
         UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelection");
         //reset the timeScale, hp and bullet
-        Time.timeScale = 1;
         StateManager.hp = StateManager.maxHp;
         StateManager.bulletNumber = StateManager.maxBulletNumber;
         //hide the curtain gradually and destroy 
