@@ -40,7 +40,8 @@ public class SaveManager : MonoBehaviour
         saveData.bgmVolume = AudioManager.bgmVolume;
         saveData.seVolume = AudioManager.seVolume;
         saveData.language = TitleManager.language;
-
+        saveData.graveyardUnlocked = LevelSelectManager.graveyardUnlocked;
+        saveData.skyUnlocked = LevelSelectManager.skyUnlocked;
         //serialize the saveData
         bf.Serialize(saveDataFile, saveData);
         //close the file, which professor always asks us to remember
@@ -76,11 +77,12 @@ public class SaveManager : MonoBehaviour
             saveDataFile.Close();
 
             //use what in the save Data
-
             gameObject.GetComponent<TitleManager>().SetLanguage(saveData.language);
             gameObject.GetComponent<TitleManager>().SetBgmVolume(saveData.bgmVolume);
             gameObject.GetComponent<TitleManager>().SetSeVolume(saveData.seVolume);
             gameObject.GetComponent<TitleManager>().SetHighestScore(saveData.highestScore);
+            LevelSelectManager.graveyardUnlocked = saveData.graveyardUnlocked;
+            LevelSelectManager.skyUnlocked = saveData.skyUnlocked;
         }
         else
         {
@@ -97,5 +99,7 @@ class SaveData
     public float bgmVolume;
     public float seVolume;
     public language language;
+    public bool graveyardUnlocked = false;
+    public bool skyUnlocked = false;
 
 }

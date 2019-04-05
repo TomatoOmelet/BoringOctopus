@@ -35,10 +35,10 @@ public class TitleManager : MonoBehaviour {
 
     public void AdventureButton()
     {
-        StartCoroutine(AdventureMode());
+        StartCoroutine(LevelSelect());
     }
 
-    IEnumerator AdventureMode()
+    IEnumerator LevelSelect()
     {
         //show the black curtain
         DontDestroyOnLoad(blackCurtain.transform.parent.gameObject);
@@ -54,7 +54,7 @@ public class TitleManager : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
         //transfer to next Scene!
-        UnityEngine.SceneManagement.SceneManager.LoadScene("01-Game");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelection");
         //reset the timeScale, hp and bullet
         Time.timeScale = 1;
         StateManager.hp = StateManager.maxHp;
