@@ -16,7 +16,7 @@ public class TranskeletonB : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        skillTimeInterval = Random.Range(1f, 3f);
+        skillTimeInterval = Random.Range(2f, 4f);
     }
 	
 	// Update is called once per frame

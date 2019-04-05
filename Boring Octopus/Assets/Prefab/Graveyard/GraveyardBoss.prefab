@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemArray:
   - {fileID: 1197386726528986, guid: fc930a6a08d082b4e88dd9a4ae0a469d, type: 3}
-  timeInterval: 0.4
+  timeInterval: 0.6
 --- !u!1 &1774800132170242
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemArray:
   - {fileID: 1668414476686550, guid: 2c755bb4d76e75e4c9d542040f79aecd, type: 3}
-  timeInterval: 1
+  timeInterval: 0.6
 --- !u!1 &1778553278726154
 GameObject:
   m_ObjectHideFlags: 0
