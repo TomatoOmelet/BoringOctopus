@@ -13,6 +13,7 @@ public enum map
 }
 
 public class MapManager : MonoBehaviour {
+    public GameObject[] initialMap;
     public GameObject[] forestMapArray;
     public GameObject forestBossMap;
     public GameObject forestBoss;
@@ -37,11 +38,23 @@ public class MapManager : MonoBehaviour {
        
     void Start () {
         //add the first map to the list
-        mapObjectsList.Add(GameObject.Find("map1"));
-
+        if(LevelSelectManager.levelChosen == map.forest)
+        {
+            mapObjectsList.Add(initialMap[0]); 
+            mapObjectsList[0].SetActive(true);
+            process = map.forest;
+        }else if(LevelSelectManager.levelChosen == map.graveyard)
+        {
+            mapObjectsList.Add(initialMap[1]); 
+            mapObjectsList[0].SetActive(true);
+            process = map.graveyard;
+        }else{
+            mapObjectsList.Add(initialMap[2]); 
+            mapObjectsList[0].SetActive(true);
+            process = map.sky;
+        }
         //generate the first map
-        OneNewMap(map.forest);
-
+        OneNewMap(process);
         bossCount = 0;
 	}
 	

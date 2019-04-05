@@ -140,5 +140,8 @@ public class GraveyardBossManager : MonoBehaviour {
         GameObject.Find("Manager").GetComponent<StateManager>().ChangeBullet(5);
         //get Score
         GameObject.Find("Manager").GetComponent<StateManager>().ChangeScore(200);
+        //unlock level
+        LevelSelectManager.levelChosen = map.sky;
+        LevelSelectManager.skyUnlocked = true;
     }
 }

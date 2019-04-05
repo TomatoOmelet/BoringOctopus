@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Map{
-    Forest,
-    Graveyard,
-    Sky
-}
-
 public class LevelSelectManager : MonoBehaviour
 {
     static public bool graveyardUnlocked;
@@ -19,12 +13,18 @@ public class LevelSelectManager : MonoBehaviour
     public AudioClip comfirmSE;
     public GameObject[] levelButtons;
     public GameObject skyInfoText;
-    public static Map levelChosen;
+    public static map levelChosen;
     public int current;
+
+    private bool canAct;
     // Start is called before the first frame update
     void Start()
     {
-        SwitchLevelButton(0);
+        canAct = true;
+        current = 0;
+        levelButtons[current].transform.localScale = selectedScale;
+        skyInfoText.SetActive(false);
+        levelChosen = map.forest;
         //check unlock
         if(!graveyardUnlocked)
         {
@@ -39,8 +39,10 @@ public class LevelSelectManager : MonoBehaviour
     }
 
 
-    void SwitchLevelButton(int newLevel)
+    public void SwitchLevelButton(int newLevel)
     {
+        if(!canAct)
+            return;
         AudioSource.PlayClipAtPoint(comfirmSE, new Vector3(0, 0, 0), AudioManager.seVolume);
         levelButtons[current].transform.localScale = Vector3.one;
         current = newLevel;
@@ -49,21 +51,24 @@ public class LevelSelectManager : MonoBehaviour
         switch(current)
         {
             case 0:
-                levelChosen = Map.Forest;
+                levelChosen = map.forest;
                 break;
             case 1:
-                levelChosen = Map.Graveyard;
+                levelChosen = map.graveyard;
                 break;
             case 2:
-                levelChosen = Map.Sky;
+                levelChosen = map.sky;
                 skyInfoText.SetActive(true);
                 break; 
         }
     }
 
-    void DepartButton(int newLevel)
+    public void DepartButton()
     {
+        if(!canAct)
+            return;
         StartCoroutine(AdventureMode());
+        canAct = false;
     }
 
     IEnumerator AdventureMode()

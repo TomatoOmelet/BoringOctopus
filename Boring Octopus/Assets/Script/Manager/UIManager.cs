@@ -149,8 +149,8 @@ public class UIManager : MonoBehaviour {
         AudioSource.PlayClipAtPoint(comfirmSE, new Vector3(0, 0, 0), AudioManager.seVolume);
     }
 
-    public void ExitButton()
+    public void ReturnButton()
     {
-        Application.Quit();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("00-Title");
     }
 }

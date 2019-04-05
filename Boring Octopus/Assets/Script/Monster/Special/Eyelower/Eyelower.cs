@@ -106,6 +106,9 @@ public class Eyelower : MonoBehaviour {
         GameObject.Find("Manager").GetComponent<StateManager>().ChangeBullet(5);
         //get Score
         GameObject.Find("Manager").GetComponent<StateManager>().ChangeScore(100);
+        //unlock level
+        LevelSelectManager.levelChosen = map.graveyard;
+        LevelSelectManager.graveyardUnlocked = true;
        
     }
 
