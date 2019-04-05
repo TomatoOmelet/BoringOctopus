@@ -30,7 +30,7 @@ public class SaveManager : MonoBehaviour
         path = Path.Combine(path, "Save.dat");
         
         //create directory if not exist
-        if(!Directory.Exists(Path.GetDirectoryName(path)))
+        if(Application.platform != RuntimePlatform.WebGLPlayer && !Directory.Exists(Path.GetDirectoryName(path)))
             Directory.CreateDirectory(Path.GetDirectoryName(path));
         FileStream saveDataFile = File.Create(path);
 
