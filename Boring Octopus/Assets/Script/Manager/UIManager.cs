@@ -38,11 +38,11 @@ public class UIManager : MonoBehaviour {
         {
             if(x< StateManager.hp)
             {
-                heartArray[x].SetActive(true);
+                heartArray[x].GetComponent<Image>().enabled = true;
             }
             else
             {
-                heartArray[x].SetActive(false);
+                heartArray[x].GetComponent<Image>().enabled = false;
             }
            
         }
@@ -56,11 +56,11 @@ public class UIManager : MonoBehaviour {
         {
             if (x < StateManager.bulletNumber)
             {
-                bulletArray[x].SetActive(true);
+                bulletArray[x].GetComponent<Image>().enabled = true;
             }
             else
             {
-                bulletArray[x].SetActive(false);
+                bulletArray[x].GetComponent<Image>().enabled = false;
             }
 
         }

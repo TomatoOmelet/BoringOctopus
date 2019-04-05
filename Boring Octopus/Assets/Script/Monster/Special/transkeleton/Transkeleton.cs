@@ -130,9 +130,9 @@ public class Transkeleton : MonoBehaviour {
             if (hp <= 0)
             {
                 GetComponent<Animator>().SetTrigger("disappear");
+                alive = false;
+                this.Invoke("LittleTranskeletonAppear", 1);
             }
-            alive = false;
-            this.Invoke("LittleTranskeletonAppear", 1);
         }
     }
 
