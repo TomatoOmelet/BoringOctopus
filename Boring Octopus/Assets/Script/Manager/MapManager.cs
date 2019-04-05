@@ -95,7 +95,8 @@ public class MapManager : MonoBehaviour {
                 Destroy(mapObjectsList[0]);
                 mapObjectsList.RemoveAt(0);
                 //Move the leftBound;
-                leftBound.transform.position = new Vector3(mapWidth * (mapIndex - 3) - 11.2f, 0, 0);
+                if(leftBound)
+                    leftBound.transform.position = new Vector3(mapWidth * (mapIndex - 3) - 11.2f, 0, 0);
             }
         }
         
@@ -124,7 +125,7 @@ public class MapManager : MonoBehaviour {
         }
         else if(process == map.graveyard)
         {
-            if (bossCount > 20)
+            if (bossCount > 13)
             {
                 ChangeProcess(map.graveyardBoss);
                 OneNewMap(map.graveyardBoss);
