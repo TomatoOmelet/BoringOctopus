@@ -15,7 +15,24 @@ public class SaveManager : MonoBehaviour
         //create a binary formatter 
         BinaryFormatter bf = new BinaryFormatter();
         //create a file stream
-        FileStream saveDataFile = File.Create(Application.persistentDataPath + "/Save.dat");
+        string path = Application.persistentDataPath;
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+		{
+			path = Application.persistentDataPath;
+			string folderName = Path.GetFileName(path);
+			while(folderName != "idbfs")
+			{
+				path = Path.GetDirectoryName(path);
+				folderName = Path.GetFileName(path);
+			}
+        }
+        path = Path.Combine(path, "BoringOctopus");
+        path = Path.Combine(path, "Save.dat");
+        
+        //create directory if not exist
+        if(!Directory.Exists(Path.GetDirectoryName(path)))
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+        FileStream saveDataFile = File.Create(path);
 
         //save things we need at SaveData
         SaveData saveData = new SaveData();
@@ -32,13 +49,27 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
+        string path = Application.persistentDataPath;
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+		{
+			path = Application.persistentDataPath;
+			string folderName = Path.GetFileName(path);
+			while(folderName != "idbfs")
+			{
+				path = Path.GetDirectoryName(path);
+				folderName = Path.GetFileName(path);
+			}
+        }
+        path = Path.Combine(path, "BoringOctopus");
+        path = Path.Combine(path, "Save.dat");
+        Debug.Log("Checking Save File at: " + path);
         //test if the saveData exists
-        if (File.Exists(Application.persistentDataPath + "/Save.dat"))
+        if (File.Exists(path))
         {
             //the...emmmm...again
             BinaryFormatter bf = new BinaryFormatter();
             //file stream, this time is open
-            FileStream saveDataFile = File.Open(Application.persistentDataPath + "/Save.dat", FileMode.Open);
+            FileStream saveDataFile = File.Open(path, FileMode.Open);
             //deserialize
             SaveData saveData = (SaveData)bf.Deserialize(saveDataFile);
             //close the file
